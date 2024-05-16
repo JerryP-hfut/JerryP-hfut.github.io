@@ -13,9 +13,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column; /* Stack items vertically */
             height: 100vh;
             margin: 0;
-            overflow: hidden;
+            overflow-y: auto; /* Allow vertical scrolling */
+            padding: 20px; /* Add some padding for better view */
         }
         .album-container {
             width: 80%;
@@ -24,12 +26,13 @@
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             background: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px; /* Add some space between albums */
             animation: fadeIn 2s ease;
         }
         .album-header {
             text-align: center;
             padding: 20px;
-            background: rgba(255, 126, 95, 0.8);
+            background: rgba(229, 193, 232, 0.8);
             color: white;
             font-size: 2em;
             font-weight: bold;
@@ -76,7 +79,7 @@
 <body>
     <div class="album-container">
         <div class="album-header">
-            PX LOVES XYY AND XYY LOVES PX
+            2024江苏实习
         </div>
         <div class="album-content">
             <div class="photo">
@@ -100,7 +103,23 @@
             <!-- 添加更多照片 -->
         </div>
     </div>
-
+    <div class="album-container">
+        <div class="album-header">
+            汉服
+        </div>
+        <div class="album-content">
+            <div class="photo">
+                <img src="resources/gfpic_src/photo7.jpg" alt="Photo 7">
+            </div>
+            <div class="photo">
+                <img src="resources/gfpic_src/photo8.jpg" alt="Photo 8">
+            </div>
+            <div class="photo">
+                <img src="resources/gfpic_src/photo9.jpg" alt="Photo 9">
+            </div>
+            <!-- 添加更多照片 -->
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>

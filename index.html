@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Empire Studio</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100%; /* 修改为 min-height */
+            overflow: auto; /* 允许滚动 */
+            font-family: 'Arial', sans-serif;
+        }
+        canvas {
+            position: fixed; /* 改为 fixed 以确保 canvas 背景覆盖整个屏幕且不随滚动条滚动 */
+            top: 0;
+            left: 0;
+            width: 100%; /* 确保 canvas 覆盖整个屏幕宽度 */
+            height: 100%; /* 确保 canvas 覆盖整个屏幕高度 */
+            z-index: 0;
+        }
+        .content-area {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+        }        
+        .header, .footer { 
+            background: rgba(0, 80, 0, 0.8); 
+            padding: 20px; 
+            text-align: center; 
+        }
+        .nav { 
+            background: rgba(0, 80, 0, 0.8); 
+            padding: 10px 20px; 
+            text-align: center; 
+        }
+        .nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px 20px; 
+        }
+        .intro, .content, .team { 
+            text-align: center; 
+            padding: 40px 20px; 
+        }
+        .content { 
+            display: flex; 
+            justify-content: space-around; 
+        }
+        .content > div, .member { 
+            background: rgba(0, 80, 0, 0.6); 
+            padding: 20px; 
+            margin: 10px;
+            box-shadow: 0 0 20px rgba(0, 80, 0, 0.6); 
+        }
+        .member img { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+        }
+        .team { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+        }
+        a { 
+            color: #aad8d3; 
+        }
+    </style>    
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <div class="content-area">
+        <div class="header">
+            <h1>Welcome to Hacker Empire Studio</h1>
+            <h2>合肥工业大学Hacker Empire深度学习工作室</h2>
+        </div>
+        <div class="nav">
+            <a href="#">主页/HomePage</a>
+            <a href="EyeNet.html">EyeNet</a>
+            <a href="#">获奖/awards</a>
+        </div>
+        <div class="intro">
+            <h2>关于我们/About Us</h2>
+            <img src="https://foruda.gitee.com/images/1710947240379030127/047f47a2_14178859.jpeg" width="350px">
+            <p>合肥工业大学HackerEmpire深度学习实验室，主要应用框架为Pytorch、MindSpore。目前已开发项目有“EyeNet：基于PyTorch的青光眼眼底病变识别辅助模型”等。</p>
+            <p>HackerEmpire Deep Learning Laboratory of Hefei University of Technology, the main application frameworks are Pytorch and MindSpore, and the projects we have developed so far include "EyeNet: Glaucoma Fundus Lesion Recognition Auxiliary Model Based on PyTorch" and so on.</p>
+        </div>
+        <div class="content">
+            <div>
+                <h3>计算机视觉（Computer Vision）</h3>
+                <p>使用PyTorch、MindSpore深度学习框架开发性能卓越的计算机视觉感知模型，包括图像复原、目标检测、语义分割等模型开发。</p>
+                <p>Develop high-performance computer vision perceptual models using PyTorch, MindSpore deep learning frameworks, including image restoration, target detection, semantic segmentation, and other model development.</p>
+            </div>
+            <div>
+                <h3>基于机器学习的数据分析（Data Analyzing Based on Machine Learning）</h3>
+                <p>利用多层感知机（MLP）、支持向量机（SVM）等经典机器学习算法进行材料性能、生理指标等相关数据分析与预测模型开发。</p>
+                <p>Data analysis and predictive model development related to material properties, physiological metrics, and other relevant data using classical machine learning algorithms such as multilayer perceptual machines (MLPs) and support vector machines (SVMs).</p>
+            </div>
+            <div>
+                <h3>自然语言处理（Natural Language Processing）</h3>
+                <p>拓展中，尽情期待...</p>
+                <p>Still learning...</p>
+            </div>
+        </div>
+        <div class="team">
+            <div class="member">
+                <img src="https://gitee.com/jerry-ethan-pan/resources/raw/master/headd0.png" width="600px">
+                <h4>Jerry Pan</h4>
+                <p>合肥工业大学计算机与信息系学生，计算机科学与技术专业。熟悉Python、C++、Java及 Visual Basic等编程语言，学业排名2/253，2022-2023学年获国家奖学金、一等奖学金及校“三好学生”称号。于2023年第24届全国大学生英语竞赛获省级二等奖，并以队长身份参加2024年美国大学生数学建模竞赛获Meritorius Winner奖项。有基于OpenCV的计算机视觉项目以及基于MindSpore的机器学习模型项目“心脏病预测模型”开发经历，熟悉传统机器学习算法，且在PyTorch机器学习框架以及OpenCV有一定的基础。</p>
+                <p>Hefei University of Technology, Department of Computer and Information Technology, majoring in Computer Science and Technology. Familiar with programming languages such as Python, C++, Java and Visual Basic, ranked 2/253 in academic ranking, won the National Scholarship and the First Class Scholarship in 2022-2023 academic year. She won the second prize of the 24th National College Students' English Competition at the provincial level in 2023. He won the "Meritorius Winner" of COMAP MCM Mathematical Modeling Competition in 2024 as the team leader. He has experience in the development of computer vision project based on OpenCV and machine learning model project "Heart Disease Prediction Model" based on MindSpore. He is familiar with traditional machine learning algorithms and has some basic knowledge of PyTorch machine learning framework and OpenCV.</p>
+                <a href="#">Jerry Pan的个人主页/Personal Page</a>
+            </div>
+            <div class="member">
+                <img src="https://gitee.com/jerry-ethan-pan/resources/raw/master/headd1.png" width="600px">
+                <h4>Neal Liang</h4>
+                <p>合肥工业大学计算机与信息系学生，计算机科学与技术专业。能熟练使用C++、Python、Java、C#编程语言，以及熟练使用latex进行文本编辑。平均学分绩点排名8/253，曾获2022-2023学年国家奖学金、一等奖学金及校“三好学生”称号。于2024年第25届全国大学生英语竞赛获省级三等奖，并参加2024年美国大学生数学建模竞赛获Meritorius Winner奖项有计算机视觉项目以及基于Pytorch的机器学习模型项目开发经历，了解计算机视觉算法、掌握模型调参以及CNN等机器学习算法。曾担任合肥工业大学2023~2024校级大创项目负责人。</p>
+                <p>Hefei University of Technology, Department of Computer and Information Studies student, majoring in Computer Science and Technology. Proficient in C++, Python, Java, C# programming languages, and text editing using latex. Ranked 8/253 in GPA, he was awarded National Scholarship and First Class Scholarship for the academic year 2022-2023. He has experience in computer vision project and Pytorch-based machine learning model project development, and understands computer vision algorithms, masters model tuning and CNN and other machine learning algorithms. He was the leader of the 2023~2024 university-level innovation and entrepreneurship program of Hefei University of Technology.</p>
+                <a href="#">Neal Liang的个人主页/Personal Page</a>
+            </div>
+            <div class="member">
+                <img src="https://gitee.com/jerry-ethan-pan/resources/raw/master/headd2.png" width="600px">
+                <h4>Lizhi Wan</h4>
+                <p>合肥工业大学计算机与信息系学生，计算机科学与技术专业。现已熟练掌握 C/C++、Java、Python、C# 等编程语言，具有一定算法基础。现学业排名3/253, 2022-2023学年获国家奖学金、校一等奖学金、校“优秀三好学生”及校“三好学生”称号。参加2024年美国大学生数学建模竞赛获Meritorius Winner奖项。有基于Pytorch的视觉算法开发项目的经历。参与2023年“挑战杯”大学生课外学术科技作品竞赛校级二等奖，现为校区数学社社长，数理储备知识扎实。</p>
+                <p>Hefei University of Technology, Department of Computer and Information Technology, majoring in Computer Science and Technology. She is proficient in C/C++, Java, Python, C# and other programming languages, and has a certain algorithmic foundation. He is ranked 3/253 in the academic rankings, and has been awarded the National Scholarship and the First Class Scholarship in the academic year of 2022-2023. He has experience in developing vision algorithms based on Pytorch. Participated in the second prize of "Challenge Cup" extracurricular academic and scientific works competition for college students in 2023. Currently, she is the president of the Math Club of the campus, and has solid knowledge of mathematics and science.</p>
+                <a href="#">Lizhi Wan的个人主页/Personal Page</a>
+            </div>
+            <div class="member">
+                <img src="https://gitee.com/jerry-ethan-pan/resources/raw/master/headd3.png" width="600px">
+                <h4>Yuhao Fang</h4>
+                <p>合肥工业大学计算机与信息系学生，计算机科学与技术专业，熟悉C++、Python、Java及Matlab等编程语言，学业均分排名4%，2022-2023学年获国家励志奖学金、一等奖学金及校＂三好学生＂称号。2023年获校数学竞赛二等奖、全国高校计算机能力挑战赛区域赛二等奖。熟悉计算机视觉算法和GAN等机器学习算法。</p>
+                <p>Hefei University of Technology, Department of Computer Science and Information, majoring in Computer Science and Technology, familiar with programming languages such as C++, Python, Java and Matlab, ranked in the 4% of the average academic score, was awarded the National Inspiration Scholarship, the First Class Scholarship, and the title of "Three Good Students" in the academic year of 2022-2023, and won the second prize of the University Mathematics Competition and the second prize of the Regional Competition of the National University Computer Proficiency Challenge in the academic year of 2023. In 2023, he won the second prize in the university math competition and the second prize in the regional competition of National University Computer Proficiency Challenge. Familiar with computer vision algorithms and machine learning algorithms such as GAN.</p>
+                <a href="#">Yuhao Fang的个人主页/Personal Page</a>
+            </div>
+        </div>
+        <div class="footer">
+            <p>我们的Gitee组织主页: <a href="https://gitee.com/hacker-empire_1" style="color: #aad8d3;">https://gitee.com/hacker-empire_1</a></p>
+        </div>
+    </div>
+    <script>
+        const width = document.getElementById("myCanvas").width = window.innerWidth;
+        const height = document.getElementById("myCanvas").height = window.innerHeight;
+        const ctx = document.getElementById("myCanvas").getContext("2d");
+        const arr = Array(Math.ceil(width / 10)).fill(0);
+        const str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789".split("");
+    
+        function rain() {
+            ctx.fillStyle = "rgba(0,0,0,0.05)";
+            ctx.fillRect(0, 0, width, height);
+            ctx.fillStyle = "#0f0"; // Bright green color
+            ctx.font = "15px monospace"; // Monospace font for the matrix effect
+            arr.forEach(function (value, index) {
+                const character = str[Math.floor(Math.random() * str.length)];
+                ctx.fillText(character, index * 10, value + 10);
+                arr[index] = value >= height || value > 8888 * Math.random() ? 0 : value + 10;
+            });
+        }
+    
+        setInterval(rain, 30);
+    </script>
+</body>
+</html>

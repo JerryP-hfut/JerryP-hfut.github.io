@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerry Pan's Personal Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('BG.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+        .project-link {
+            display: block;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            text-decoration: none;
+            color: #000000;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .project-link img {
+            max-width: 100px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .project-link:hover {
+            transform: scale(1.05);
+            background-color: #e0e0e0;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jerry Pan</h1>
+            <p>Welcome to my personal webpage. Here you will find information about my educational background, programming skills, and projects.</p>
+        </header>
+
+        <div class="section">
+            <h2>Personal Introduction</h2>
+            <p>I am a student at Hefei University of Technology, majoring in Computer Science and Technology. I have achieved several accolades during my studies and have a strong desire in Deep Learning.</p>
+        </div>
+
+        <div class="section">
+            <h2>Educational Background</h2>
+            <ul>
+                <li>Department: Computer and Information Technology</li>
+                <li>Major: Computer Science and Technology</li>
+                <li>Rank: 2/253</li>
+                <li>National Scholarship, First Class Scholarship (2022-2023)</li>
+                <li>English Competition Second Prize at provincial level (2023)</li>
+                <li>COMAP MCM Meritorious Winner (2024, Team Leader)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Programming Languages Mastered</h2>
+            <ul>
+                <li>Python</li>
+                <li>C++</li>
+                <li>Java</li>
+                <li>Visual Basic</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <a class="project-link" href="https://github.com/jerryp-hfut/HeartAttackPrediction" target="_blank">
+                <img src="proj1.webp" alt="Heart Disease Prediction Model">
+                Heart Disease Prediction Model
+            </a>
+            <a class="project-link" href="https://github.com/jerryp-hfut/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection" target="_blank">
+                <img src="proj2.webp" alt="EyeNet: A Convolutional Neural Network for Glaucomatous Fundus Lesion Detection">
+                EyeNet: A Convolutional Neural Network for Glaucomatous Fundus Lesion Detection
+            </a>
+        </div>
+
+        <div class="section">
+            <h2>Skills and Knowledge</h2>
+            <ul>
+                <li>Traditional Machine Learning Algorithms</li>
+                <li>Basic knowledge of PyTorch</li>
+                <li>Basic knowledge of OpenCV</li>
+            </ul>
+        </div>
+
+        <footer>
+            <a class="project-link" href="https://github.com/jerryp-hfut" target="_blank">Github Homepage</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -12,7 +12,7 @@
             background-size: cover;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Changed from center to flex-start to allow scrolling */
+            align-items: flex-start; /* Allow vertical alignment */
             flex-direction: column; /* Stack items vertically */
             min-height: 100vh; /* Ensure minimum height to allow scrolling */
             margin: 0;
@@ -28,6 +28,8 @@
             background: rgba(255, 255, 255, 0.9);
             margin-bottom: 20px; /* Add some space between albums */
             animation: fadeIn 2s ease;
+            text-align: center; /* Center the album container */
+            padding: 20px; /* Add padding to ensure text is within container */
         }
         .album-header {
             text-align: center;
@@ -73,6 +75,16 @@
                 transform: translateY(0);
                 opacity: 1;
             }
+        }
+        p {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.2em;
+            background: -webkit-linear-gradient(left, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            margin: 20px 0;
+            text-align: center; /* Center the text */
         }
     </style>
 </head>

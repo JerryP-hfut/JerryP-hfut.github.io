@@ -14,13 +14,13 @@
             justify-content: center;
             align-items: center;
             flex-direction: column; /* Stack items vertically */
-            height: 100vh;
+            min-height: 100vh; /* Ensure minimum height to allow scrolling */
             margin: 0;
-            overflow-y: auto; /* Allow vertical scrolling */
             padding: 20px; /* Add some padding for better view */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         .album-container {
-            width: 80%;
+            width: 100%;
             max-width: 1000px;
             border-radius: 10px;
             overflow: hidden;

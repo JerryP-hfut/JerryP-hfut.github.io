@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>PX&XYY</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&family=Indie+Flower&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         body {
@@ -12,12 +12,12 @@
             background-size: cover;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Allow vertical alignment */
-            flex-direction: column; /* Stack items vertically */
-            min-height: 100vh; /* Ensure minimum height to allow scrolling */
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
             margin: 0;
-            padding: 20px; /* Add some padding for better view */
-            overflow-y: auto; /* Allow vertical scrolling */
+            padding: 20px;
+            overflow-y: auto;
         }
         .album-container {
             width: 100%;
@@ -26,10 +26,10 @@
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
             background: rgba(255, 255, 255, 0.9);
-            margin-bottom: 20px; /* Add some space between albums */
+            margin-bottom: 20px;
             animation: fadeIn 2s ease;
-            text-align: center; /* Center the album container */
-            padding: 20px; /* Add padding to ensure text is within container */
+            text-align: center;
+            padding: 20px;
         }
         .album-header {
             text-align: center;
@@ -77,14 +77,14 @@
             }
         }
         p {
-            font-family: 'Pacifico', cursive;
+            font-family: 'Indie Flower', cursive;
             font-size: 1.2em;
             background: -webkit-linear-gradient(left, #ff7e5f, #feb47b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            background: linear-gradient(to right, #89f7fe, #66a6ff);
             margin: 20px 0;
-            text-align: center; /* Center the text */
+            text-align: center;
         }
     </style>
 </head>
@@ -113,7 +113,6 @@
             <div class="photo">
                 <img src="resources/gfpic_src/photo6.jpg" alt="Photo 6">
             </div>
-            <!-- 添加更多照片 -->
         </div>
     </div>
     <div class="album-container">
@@ -132,7 +131,6 @@
             <div class="photo">
                 <img src="resources/gfpic_src/photo9.jpg" alt="Photo 9">
             </div>
-            <!-- 添加更多照片 -->
         </div>
     </div>
     <div class="album-container">
@@ -152,7 +150,6 @@
             <div class="photo">
                 <img src="resources/gfpic_src/photo9.jpg" alt="Photo 9">
             </div>
-            <!-- 添加更多照片 -->
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -160,7 +157,6 @@
     <script>
         new WOW().init();
         
-        // 遍历所有图片，设置延迟动画效果
         document.addEventListener('DOMContentLoaded', () => {
             const photos = document.querySelectorAll('.photo');
             photos.forEach((photo, index) => {

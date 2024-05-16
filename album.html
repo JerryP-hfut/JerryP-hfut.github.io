@@ -8,12 +8,14 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            background: url('resources/gfpic_src/BG.jpg') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            overflow: hidden;
         }
         .album-container {
             width: 80%;
@@ -21,12 +23,13 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            background: #fff;
+            background: rgba(255, 255, 255, 0.9);
+            animation: fadeIn 2s ease;
         }
         .album-header {
             text-align: center;
             padding: 20px;
-            background: #ff7e5f;
+            background: rgba(255, 126, 95, 0.8);
             color: white;
             font-size: 2em;
             font-weight: bold;
@@ -35,6 +38,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            padding: 20px;
         }
         .photo {
             width: 30%;
@@ -43,6 +47,8 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
         }
         .photo img {
             width: 100%;
@@ -55,10 +61,20 @@
         .photo:hover img {
             transform: scale(1.1);
         }
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="album-container animate__animated animate__fadeIn">
+    <div class="album-container">
         <div class="album-header">
             PX LOVES XYY AND XYY LOVES PX
         </div>
@@ -89,6 +105,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();
+        
+        // 遍历所有图片，设置延迟动画效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const photos = document.querySelectorAll('.photo');
+            photos.forEach((photo, index) => {
+                photo.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
     </script>
 </body>
 </html>

@@ -2,152 +2,117 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacker Empire Studio</title>
+    <title>恋爱相册</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
-        body, html {
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('resources/gfpic_src/BG.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            min-height: 100%; /* 修改为 min-height */
-            overflow: auto; /* 允许滚动 */
-            font-family: 'Arial', sans-serif;
+            overflow: hidden;
         }
-        canvas {
-            position: fixed; /* 改为 fixed 以确保 canvas 背景覆盖整个屏幕且不随滚动条滚动 */
-            top: 0;
-            left: 0;
-            width: 100%; /* 确保 canvas 覆盖整个屏幕宽度 */
-            height: 100%; /* 确保 canvas 覆盖整个屏幕高度 */
-            z-index: 0;
+        .album-container {
+            width: 80%;
+            max-width: 1000px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.9);
+            animation: fadeIn 2s ease;
         }
-        .content-area {
-            position: relative;
-            z-index: 1;
-            color: #fff;
-        }        
-        .header, .footer { 
-            background: rgba(0, 80, 0, 0.8); 
-            padding: 20px; 
-            text-align: center; 
+        .album-header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 126, 95, 0.8);
+            color: white;
+            font-size: 2em;
+            font-weight: bold;
         }
-        .nav { 
-            background: rgba(0, 80, 0, 0.8); 
-            padding: 10px 20px; 
-            text-align: center; 
+        .album-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
         }
-        .nav a { 
-            color: white; 
-            text-decoration: none; 
-            padding: 10px 20px; 
-        }
-        .intro, .content, .team { 
-            text-align: center; 
-            padding: 40px 20px; 
-        }
-        .content { 
-            display: flex; 
-            justify-content: space-around; 
-        }
-        .content > div, .member { 
-            background: rgba(0, 80, 0, 0.6); 
-            padding: 20px; 
+        .photo {
+            width: 30%;
             margin: 10px;
-            box-shadow: 0 0 20px rgba(0, 80, 0, 0.6); 
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            animation: fadeInUp 1s ease forwards;
+            opacity: 0;
         }
-        .member img { 
-            width: 150px; 
-            height: 150px; 
-            border-radius: 50%; 
+        .photo img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
         }
-        .team { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr); 
+        .photo:hover {
+            transform: scale(1.05);
         }
-        a { 
-            color: #aad8d3; 
+        .photo:hover img {
+            transform: scale(1.1);
         }
-    </style>    
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 <body>
-    <canvas id="myCanvas"></canvas>
-    <div class="content-area">
-        <div class="header">
-            <h1>Welcome to Hacker Empire Studio</h1>
+    <div class="album-container">
+        <div class="album-header">
+            PX LOVES XYY AND XYY LOVES PX
         </div>
-        <div class="nav">
-            <a href="#">HomePage</a>
-            <a href="EyeNet.html">EyeNet</a>
-            <a href="#">awards</a>
-        </div>
-        <div class="intro">
-            <h2>About Us</h2>
-            <img src="https://foruda.gitee.com/images/1710947240379030127/047f47a2_14178859.jpeg" width="350px">
-            <p>HackerEmpire Deep Learning Laboratory of Hefei University of Technology, the main application frameworks are Pytorch and MindSpore, and the projects we have developed so far include "EyeNet: Glaucoma Fundus Lesion Recognition Auxiliary Model Based on PyTorch" and so on.</p>
-        </div>
-        <div class="content">
-            <div>
-                <h3>Computer Vision</h3>
-                <p>Develop high-performance computer vision perceptual models using PyTorch, MindSpore deep learning frameworks, including image restoration, target detection, semantic segmentation, and other model development.</p>
+        <div class="album-content">
+            <div class="photo">
+                <img src="resources/gfpic_src/photo1.jpg" alt="Photo 1">
             </div>
-            <div>
-                <h3>Data Analyzing Based on Machine Learning</h3>
-                <p>Data analysis and predictive model development related to material properties, physiological metrics, and other relevant data using classical machine learning algorithms such as multilayer perceptual machines (MLPs) and support vector machines (SVMs).</p>
+            <div class="photo">
+                <img src="resources/gfpic_src/photo2.jpg" alt="Photo 2">
             </div>
-            <div>
-                <h3>Natural Language Processing</h3>
-                <p>Still learning...</p>
+            <div class="photo">
+                <img src="resources/gfpic_src/photo3.jpg" alt="Photo 3">
             </div>
-        </div>
-        <div class="team">
-            <div class="member">
-                <img src="resources/index_src/hacker1.png" width="600px">
-                <h4>Jerry Pan</h4>
-                <p>Hefei University of Technology, Department of Computer and Information Technology, majoring in Computer Science and Technology. Familiar with programming languages such as Python, C++, Java and Visual Basic, ranked 2/253 in academic ranking, won the National Scholarship and the First Class Scholarship in 2022-2023 academic year. He won the "Meritorius Winner" of COMAP MCM Mathematical Modeling Competition in 2024 as the TEAM LEADER. He has experience in the development of computer vision project based on OpenCV and machine learning model project "Heart Disease Prediction Model" based on MindSpore. He is familiar with traditional machine learning algorithms and has some basic knowledge of PyTorch machine learning framework and OpenCV.</p>
-                <a href="https://jerryp-hfut.github.io">Jerry Pan's Personal Page</a>
+            <div class="photo">
+                <img src="resources/gfpic_src/photo4.jpg" alt="Photo 4">
             </div>
-            <div class="member">
-                <img src="resources/index_src/hacker2.png" width="600px">
-                <h4>Neal Liang</h4>
-                <p>Hefei University of Technology, Department of Computer and Information Studies student, majoring in Computer Science and Technology. Proficient in C++, Python, Java, C# programming languages, and text editing using latex. Ranked 8/253 in GPA, he was awarded National Scholarship and First Class Scholarship for the academic year 2022-2023. He has experience in computer vision project and Pytorch-based machine learning model project development, and understands computer vision algorithms, masters model tuning and CNN and other machine learning algorithms. He was the leader of the 2023~2024 university-level innovation and entrepreneurship program of Hefei University of Technology.</p>
-                <a href="#">Neal Liang's Personal Page</a>
+            <div class="photo">
+                <img src="resources/gfpic_src/photo5.jpg" alt="Photo 5">
             </div>
-            <div class="member">
-                <img src="resources/index_src/hacker3.png" width="600px">
-                <h4>Lizhi Wan</h4>
-                <p>Hefei University of Technology, Department of Computer and Information Technology, majoring in Computer Science and Technology. She is proficient in C/C++, Java, Python, C# and other programming languages, and has a certain algorithmic foundation. He is ranked 3/253 in the academic rankings, and has been awarded the National Scholarship and the First Class Scholarship in the academic year of 2022-2023. He has experience in developing vision algorithms based on Pytorch. Participated in the second prize of "Challenge Cup" extracurricular academic and scientific works competition for college students in 2023. Currently, she is the president of the Math Club of the campus, and has solid knowledge of mathematics and science.</p>
-                <a href="#">Lizhi Wan's Personal Page</a>
+            <div class="photo">
+                <img src="resources/gfpic_src/photo6.jpg" alt="Photo 6">
             </div>
-            <div class="member">
-                <img src="resources/index_src/hacker4.png" width="600px">
-                <h4>Yuhao Fang</h4>
-                <p>Hefei University of Technology, Department of Computer Science and Information, majoring in Computer Science and Technology, familiar with programming languages such as C++, Python, Java and Matlab, ranked in the 4% of the average academic score, was awarded the National Inspiration Scholarship, the First Class Scholarship, and the title of "Three Good Students" in the academic year of 2022-2023, and won the second prize of the University Mathematics Competition and the second prize of the Regional Competition of the National University Computer Proficiency Challenge in the academic year of 2023. In 2023, he won the second prize in the university math competition and the second prize in the regional competition of National University Computer Proficiency Challenge. Familiar with computer vision algorithms and machine learning algorithms such as GAN.</p>
-                <a href="#">Yuhao Fang's Personal Page</a>
-            </div>
-        </div>
-        <div class="footer">
-            <p>Gitee Org Page: <a href="https://gitee.com/hacker-empire_1" style="color: #aad8d3;">https://gitee.com/hacker-empire_1</a></p>
+            <!-- 添加更多照片 -->
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
-        const width = document.getElementById("myCanvas").width = window.innerWidth;
-        const height = document.getElementById("myCanvas").height = window.innerHeight;
-        const ctx = document.getElementById("myCanvas").getContext("2d");
-        const arr = Array(Math.ceil(width / 10)).fill(0);
-        const str = "01".split("");
-    
-        function rain() {
-            ctx.fillStyle = "rgba(0,0,0,0.05)";
-            ctx.fillRect(0, 0, width, height);
-            ctx.fillStyle = "#0f0"; // Bright green color
-            ctx.font = "15px monospace"; // Monospace font for the matrix effect
-            arr.forEach(function (value, index) {
-                const character = str[Math.floor(Math.random() * str.length)];
-                ctx.fillText(character, index * 10, value + 10);
-                arr[index] = value >= height || value > 8888 * Math.random() ? 0 : value + 10;
+        new WOW().init();
+        
+        // 遍历所有图片，设置延迟动画效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const photos = document.querySelectorAll('.photo');
+            photos.forEach((photo, index) => {
+                photo.style.animationDelay = `${index * 0.2}s`;
             });
-        }
-    
-        setInterval(rain, 30);
+        });
     </script>
 </body>
 </html>

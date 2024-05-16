@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyeNet: A Glaucoma Diagnosis Aid Model</title>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            background: linear-gradient(270deg, #6a82fb, #fc5c7d);
+            background-size: 400% 400%;
+            animation: Gradient 15s ease infinite;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes Gradient {
+            0% {
+                background-position: 0% 50%
+            }
+            50% {
+                background-position: 100% 50%
+            }
+            100% {
+                background-position: 0% 50%
+            }
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .section {
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+            animation-delay: 0.3s;
+        }
+
+        .section-title {
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-description {
+            margin-bottom: 20px;
+        }
+
+        .figure {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .figure img {
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .figure-caption {
+            font-size: 0.8em;
+            color: #ffffff;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+        }
+
+        .figure-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            margin-bottom: 20px;
+        }
+
+        .figure-row .figure {
+            margin: 0 10px;
+        }
+
+        .figure-row .figure img {
+            max-width: calc(33.333% - 20px);
+        }
+
+        @media (max-width: 768px) {
+            .figure-row .figure img {
+                max-width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+        .point {
+            margin-bottom: 20px;
+            display: block;
+            background: rgba(85, 77, 77, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .links {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .links p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>EyeNet: A Glaucoma Diagnosis Aid Model</h1>
+    </div>
+</header>
+
+<div class="container content">
+    <section class="section">
+        <h2 class="section-title">Introduction</h2>
+        <p>Model Author: Jerry Pan</p>
+        <p>Glaucoma, an eye disease that causes irreversible vision loss, poses a major threat to human health worldwide. It is estimated that by 2020, more than 11 million people worldwide will be blinded by glaucoma. Given its lack of early symptoms, early diagnosis is critical to prevent vision damage.</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Model Structure & Data Enhancement</h2>
+        <p>However, the lack of specialized ophthalmologists, especially in remote areas, limits early screening and treatment of glaucoma. To address this problem, this study proposes EyeNet, a convolutional neural network (CNN)-based glaucomatous fundus lesion detection system aimed at assisting physicians in more efficient glaucoma screening.</p>
+        <div class="figure">
+            <img src="resources/eyenet_src/eye-net-model.png" alt="EyeNet Model" width="600px">
+            <p class="figure-caption">EyeNet Model Structure</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Model Training and Accuracy</h2>
+        <p>We utilized the glaucoma fundus lesion image dataset obtained from Kaggle and performed data enhancement via OpenCV to pinpoint the key fundus optic disc regions, which were used as model inputs.</p>
+        <div class="figure">
+            <img src="resources/eyenet_src/enhance.png" alt="Data Enhancement" width="600px">
+            <p class="figure-caption">Data Enhancement Illustration</p>
+        </div>
+    </section>
+    <section class="section">
+        <h2 class="section-title">Feature Extraction</h2>
+        <p>The constructed EyeNet model combines multi-layer convolution, pooling, and fully connected layers to extract image features and perform classification. The model was trained using the BCEWithLogitsLoss loss function and the Adam optimizer, and after 140 generations of iterations, EyeNet achieved a high accuracy of 96.59% on the test set.</p>
+        <div class="figure">
+            <img src="resources/eyenet_src/accuracy.png" alt="Accuracy Curve" width="600px">
+            <p class="figure-caption">Training Process Accuracy Curve</p>
+        </div>
+        <p>The team visualized and analyzed the output tensor of each convolutional layer converted into a picture, and found that the model effectively learned the features in the optic nerve, vitreous body, and fundus optic disc, and output the correct result "glaucoma negative".</p>
+        <div class="figure-row">
+            <div class="figure">
+                <img src="resources/eyenet_src/kernal1.png" alt="Kernel 1" width="600px">
+                <p class="figure-caption">Output of Convolutional Kernel 1 (optic nerve)</p>
+            </div>
+            <div class="figure">
+                <img src="resources/eyenet_src/kernal2.png" alt="Kernel 2" width="600px">
+                <p class="figure-caption">Output of Convolutional Kernel 2 (vitreous body)</p>
+            </div>
+            <div class="figure">
+                <img src="resources/eyenet_src/kernal3.png" alt="Kernel 3" width="600px">
+                <p class="figure-caption">Output of Convolutional Kernel 3 (fundus optic disc)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">Innovation and Outlook</h2>
+        <p>The innovation of this study is the application of deep learning techniques to the automated diagnosis of glaucoma, which optimizes the model inputs through data augmentation techniques and significantly improves the training efficiency and diagnostic accuracy. Although the model needs further validation and optimization in practical clinical applications, its potential to improve the early diagnosis rate of glaucoma is obvious, and it is expected to provide effective technical support to alleviate the problem of glaucoma screening in areas with insufficient medical resources.</p>
+        <div class="point">
+            <h3>1. Diversity and balance of datasets</h3>
+            <p>The current model is mainly trained based on specific datasets, and future work needs to be tested on more diverse and balanced datasets to enhance the generalization ability of the model.</p>
+        </div>
+        <div class="point">
+            <h3>2. Model Interpretability</h3>
+            <p>Although CNNs perform well in image recognition, their "black-box" nature limits the model's interpretability. Future research should focus on improving the model's interpretability so that doctors can better understand the model's decision-making process.</p>
+        </div>
+        <div class="point">
+            <h3>3. Multimodal learning</h3>
+            <p>Considering that glaucoma diagnosis may require multiple types of medical images, future research could explore multimodal learning methods that combine fundus images with other types of images (e.g., OCT images).</p>
+        </div>
+    </section>
+</div>
+
+<div class="links">
+    <div class="container">
+        <p>The repository has already been uploaded to Github and Gitee!</p>
+        <p>Github: <a href="https://github.com/JerryP-hfut/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection" target="_blank">Visit Github Repository</a></p>
+        <p>Gitee: <a href="https://gitee.com/jerry-ethan-pan/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection" target="_blank">Visit Gitee Repository</a></p>
+        <p><a href="eyenet_ntbk.html">Quick Path to Source Code(Jupyter Notebook)</a></p>
+        <p><a href="index.html">Home Page</a></p>
+    </div>
+</div>
+
+
+</body>
+</html>
+
+

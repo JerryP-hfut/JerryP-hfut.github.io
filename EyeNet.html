@@ -172,7 +172,7 @@
         <h2 class="section-title">Model Structure & Data Enhancement</h2>
         <p>However, the lack of specialized ophthalmologists, especially in remote areas, limits early screening and treatment of glaucoma. To address this problem, this study proposes EyeNet, a convolutional neural network (CNN)-based glaucomatous fundus lesion detection system aimed at assisting physicians in more efficient glaucoma screening.</p>
         <div class="figure">
-            <img src="https://gitee.com/jerry-ethan-pan/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection/raw/main/demo/construct.png" alt="EyeNet Model" width="600px">
+            <img src="resources/eyenet_src/eye-net-model.png" alt="EyeNet Model" width="600px">
             <p class="figure-caption">EyeNet Model Structure</p>
         </div>
     </section>
@@ -181,7 +181,7 @@
         <h2 class="section-title">Model Training and Accuracy</h2>
         <p>We utilized the glaucoma fundus lesion image dataset obtained from Kaggle and performed data enhancement via OpenCV to pinpoint the key fundus optic disc regions, which were used as model inputs.</p>
         <div class="figure">
-            <img src="https://gitee.com/jerry-ethan-pan/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection/raw/main/demo/enhance.png" alt="Data Enhancement" width="600px">
+            <img src="resources/eyenet_src/enhance.png" alt="Data Enhancement" width="600px">
             <p class="figure-caption">Data Enhancement Illustration</p>
         </div>
     </section>
@@ -189,21 +189,21 @@
         <h2 class="section-title">Feature Extraction</h2>
         <p>The constructed EyeNet model combines multi-layer convolution, pooling, and fully connected layers to extract image features and perform classification. The model was trained using the BCEWithLogitsLoss loss function and the Adam optimizer, and after 140 generations of iterations, EyeNet achieved a high accuracy of 96.59% on the test set.</p>
         <div class="figure">
-            <img src="https://gitee.com/jerry-ethan-pan/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection/raw/main/demo/AccuracyCurve.png" alt="Accuracy Curve" width="600px">
+            <img src="resources/eyenet_src/accuracy.png" alt="Accuracy Curve" width="600px">
             <p class="figure-caption">Training Process Accuracy Curve</p>
         </div>
         <p>The team visualized and analyzed the output tensor of each convolutional layer converted into a picture, and found that the model effectively learned the features in the optic nerve, vitreous body, and fundus optic disc, and output the correct result "glaucoma negative".</p>
         <div class="figure-row">
             <div class="figure">
-                <img src="https://gitee.com/jerry-ethan-pan/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection/raw/main/demo/kernal1.png" alt="Kernel 1" width="600px">
+                <img src="resources/eyenet_src/kernal1.png" alt="Kernel 1" width="600px">
                 <p class="figure-caption">Output of Convolutional Kernel 1 (optic nerve)</p>
             </div>
             <div class="figure">
-                <img src="https://gitee.com/jerry-ethan-pan/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection/raw/main/demo/kernal2.png" alt="Kernel 2" width="600px">
+                <img src="resources/eyenet_src/kernal2.png" alt="Kernel 2" width="600px">
                 <p class="figure-caption">Output of Convolutional Kernel 2 (vitreous body)</p>
             </div>
             <div class="figure">
-                <img src="https://gitee.com/jerry-ethan-pan/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection/raw/main/demo/kernal3.png" alt="Kernel 3" width="600px">
+                <img src="resources/eyenet_src/kernal3.png" alt="Kernel 3" width="600px">
                 <p class="figure-caption">Output of Convolutional Kernel 3 (fundus optic disc)</p>
             </div>
         </div>
@@ -232,8 +232,8 @@
         <p>The repository has already been uploaded to Github and Gitee!</p>
         <p>Github: <a href="https://github.com/JerryP-hfut/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection" target="_blank">Visit Github Repository</a></p>
         <p>Gitee: <a href="https://gitee.com/jerry-ethan-pan/EyeNet-A-Convolutional-Neural-Network-for-Glaucomatous-Fundus-Lesion-Detection" target="_blank">Visit Gitee Repository</a></p>
-        <p><a href="eyenet_ntbk.html">Jupyter Notebook源码解析文件/quick path to source code</a></p>
-        <p><a href="default.html">主页/HomePage</a></p>
+        <p><a href="eyenet_ntbk.html">Quick Path to Source Code(Jupyter Notebook)</a></p>
+        <p><a href="index.html">Home Page</a></p>
     </div>
 </div>
 
